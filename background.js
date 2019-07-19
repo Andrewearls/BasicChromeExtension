@@ -5,7 +5,17 @@ chrome.runtime.onInstalled.addListener(function() {
 });
 
 chrome.tabs.onUpdated.addListener(function(changeInfo, tab) {
-    console.log('looking for url');
-    console.log(changeInfo.url);
-    console.log(tab);
+  chrome.tabs.query({'active': true, 'lastFocusedWindow': true}, function (tabs) {
+    var url = tabs[0].url;
+    console.log(url);
+  });
+    
+});
+
+chrome.tabs.onActivated.addListener(function(activeInfo) {
+  // console.log(activeInfo.tabId);
+  chrome.tabs.query({'active': true, 'lastFocusedWindow': true}, function (tabs) {
+    var url = tabs[0].url;
+    console.log(url);
+  });
 });
