@@ -6,7 +6,8 @@
         "tabs",
         "activeTab", 
         "declarativeContent", 
-        "storage"
+        "storage",
+        "identity"
       ],
     "background": {
       	"scripts": ["background.js"],
