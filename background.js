@@ -2,6 +2,9 @@
 
 chrome.runtime.onInstalled.addListener(function() {
     console.log('Installed!');
+    chrome.identity.getAuthToken(function() {
+      console.log('here');
+    });
 });
 
 chrome.tabs.onUpdated.addListener(function(changeInfo, tab) {
